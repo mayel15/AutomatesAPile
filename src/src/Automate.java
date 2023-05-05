@@ -1,6 +1,5 @@
+// Pape THIAM
 package src;
-import src.Transition;
-
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
@@ -9,6 +8,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Stack;
+
+import static jdk.nashorn.internal.objects.Global.Infinity;
 
 public class Automate {
     private Stack<String> pile;
