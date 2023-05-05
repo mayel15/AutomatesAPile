@@ -173,7 +173,7 @@ public class Automate {
         if(numeroAutomate == 1 || numeroAutomate == 2){
             System.out.println("L'expression mathematique a été acceptée.");
         }
-        if(numeroAutomate==2){
+        if(numeroAutomate == 2){
             ScriptEngineManager manager = new ScriptEngineManager();
             ScriptEngine engine = manager.getEngineByName("js");
             Object result = null;
