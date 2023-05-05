@@ -85,13 +85,24 @@ public class Automate {
         }
     }
 
-    public boolean analyse(String mot) {
+    // Permet de faire l'analyse lexical, syntaxique et semantique d'un mot
+    // numeroAutomate permet d'indiquer le numero de l'automate : 1 pour le 1, et 2 pour le 2
+    public boolean analyse(String mot, int numeroAutomate) {
         // Initialisation de l'état courant avec l'état initial de l'automate
         String etatCourant = etatI;
 
         // Parcours du mot avec chaque caractère
         for (int i = 0; i < mot.length(); i++) {
             String symboleLu = Character.toString(mot.charAt(i));
+
+            // Verification que l'on ne peut pas diviser par 0
+            if (symboleLu.equals("/")){
+                String symboleLuSuiv = Character.toString(mot.charAt(i+1));
+                if (symboleLuSuiv.equals("0")) {
+                    System.out.println("L'expression mathematique n'a pas été acceptée car on ne peut pas diviser par 0");
+                    return false;
+                }
+            }
 
             // Vérification que le symbole lu appartient à l'alphabet de l'automate
             if (!alphabet.getSymboles().contains(symboleLu)) {
@@ -159,16 +170,21 @@ public class Automate {
         }
 
         // Si on arrive ici, le mot a été reconnu
-        System.out.println("L'expression mathematique a été acceptée.");
-        ScriptEngineManager manager = new ScriptEngineManager();
-        ScriptEngine engine = manager.getEngineByName("js");
-        Object result = null;
-        try {
-            result = engine.eval(mot);
-        } catch (ScriptException e) {
-            throw new RuntimeException(e);
+        if(numeroAutomate == 1 || numeroAutomate == 2){
+            System.out.println("L'expression mathematique a été acceptée.");
         }
-        System.out.println("Le résultat de l'expression : " + mot + " = " + result);
+        if(numeroAutomate==2){
+            ScriptEngineManager manager = new ScriptEngineManager();
+            ScriptEngine engine = manager.getEngineByName("js");
+            Object result = null;
+            try {
+                result = engine.eval(mot);
+            } catch (ScriptException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("Le résultat de l'expression : " + mot + " = " + result);
+        }
+
         return true;
     }
 }
