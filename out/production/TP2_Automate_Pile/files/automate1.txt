@@ -1,0 +1,19 @@
+# alphabet
+a
+b
+c
+# etats
+S1
+S2
+S3
+# etat initial
+S1
+# etats finaux
+S3
+# transitions
+S1 a Z ZX S1
+S1 a X XX S1
+S1 b X eps S2
+S2 b X eps S2
+S2 c Z Z S3
+S3 c Z Z S3

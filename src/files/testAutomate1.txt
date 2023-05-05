@@ -1,0 +1,8 @@
+# mots
+abc
+abbbc
+aabbcc
+aaabbbccc
+abbccc
+ab
+aabc

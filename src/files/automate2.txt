@@ -1,0 +1,76 @@
+# alphabet
++
+-
+*
+/
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+(
+)
+# etats
+q0
+q1
+# etat initial
+q0
+# etats finaux
+q1
+# transitions
+q0 ( Z ZA q0
+q0 ( A AA q0
+q0 0 Z Z q1
+q0 1 Z Z q1
+q0 2 Z Z q1
+q0 3 Z Z q1
+q0 4 Z Z q1
+q0 5 Z Z q1
+q0 6 Z Z q1
+q0 7 Z Z q1
+q0 8 Z Z q1
+q0 9 Z Z q1
+q0 0 A A q1
+q0 1 A A q1
+q0 2 A A q1
+q0 3 A A q1
+q0 4 A A q1
+q0 5 A A q1
+q0 6 A A q1
+q0 7 A A q1
+q0 8 A A q1
+q0 9 A A q1
+q1 ) A eps q1
+q1 0 Z Z q1
+q1 1 Z Z q1
+q1 2 Z Z q1
+q1 3 Z Z q1
+q1 4 Z Z q1
+q1 5 Z Z q1
+q1 6 Z Z q1
+q1 7 Z Z q1
+q1 8 Z Z q1
+q1 9 Z Z q1
+q1 0 A A q1
+q1 1 A A q1
+q1 2 A A q1
+q1 3 A A q1
+q1 4 A A q1
+q1 5 A A q1
+q1 6 A A q1
+q1 7 A A q1
+q1 8 A A q1
+q1 9 A A q1
+q1 + Z Z q0
+q1 - Z Z q0
+q1 * Z Z q0
+q1 / Z Z q0
+q1 + A A q0
+q1 - A A q0
+q1 * A A q0
+q1 / A A q0
